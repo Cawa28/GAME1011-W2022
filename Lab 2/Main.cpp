@@ -74,13 +74,13 @@ public:
 	}
 };
 
-class DarcOrc : public Enemy
+class DarcOrc : public Orc
 {
 private:
 	string magic;
 
 public:
-	DarcOrc() : Enemy() { }
+	DarcOrc() : Orc() { }
 
 	void Attack() const
 	{
