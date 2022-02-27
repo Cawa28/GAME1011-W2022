@@ -1,21 +1,38 @@
 #pragma once
 #include <iostream>
 #include "Creature.h"
+#include <fstream>
+#include <string>
+#include <Windows.h>
 using namespace std;
 
 class AnimationFrame : public Creature
 {
 private:
-	int const size{ 6 };
+	static const int size{ 6 };
 	
-	Creature* creatures = new Creature();
+	Creature* creatures[size];
+	
 
 public:
 
-	void DisplayAnimation()
+	void DisplayAnimation(string file)
 	{
-		
-		// read the animation from each Creature's file.
+		string getcontent;
+		ifstream openfile(file);
+
+		if (openfile.is_open())
+		{
+			while (getline(openfile, getcontent))
+			{
+				cout << getcontent << endl;
+				if (getcontent == ".")
+				{
+					Sleep(1000);
+				}
+			}
+			Sleep(2000);
+		}
 	}
 };
 

@@ -16,6 +16,11 @@ public:
 		cout << "Creature " << name << " was created!" << endl;
 	};
 
+	string GetName()
+	{
+		return name;
+	}
+
 	//void virtual Draw() const = 0;
 };
 
